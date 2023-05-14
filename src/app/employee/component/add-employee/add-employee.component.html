@@ -1,0 +1,50 @@
+
+<mat-toolbar color="primary" class="d-flex justify-content-between">
+    <div>Add Journal Entry</div>
+    <mat-icon  [mat-dialog-close]="">close</mat-icon>
+</mat-toolbar>
+<div class="container" >
+
+   
+     <div class="beside">
+        <mat-form-field class="w-100 mr-2" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input [(ngModel)]="data.createdBy" type="text" name="name" matInput placeholder="name" readonly >
+        </mat-form-field>
+        
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Timestamp</mat-label>
+            <input [(ngModel)]="data.createdDate" type="text" name="time"  matInput placeholder="Date"  readonly >
+        </mat-form-field>
+        
+     </div>
+      
+
+ <form #addForm="ngForm">
+    <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea [(ngModel)]="data.description" type="text" name="description" matInput placeholder="description" required maxlength="500"></textarea>
+    </mat-form-field>
+</form>
+
+    <h2>Classification</h2>
+    <mat-radio-group [(ngModel)]="data.classification" aria-label="Select an option" required>
+        <mat-radio-button value="Personal">Personal</mat-radio-button>
+        <mat-radio-button value="Professional">Professional</mat-radio-button>
+      </mat-radio-group>
+    
+
+      <h2>Sharewith</h2>
+      <mat-radio-group [(ngModel)]="data.sharedwith" aria-label="Select an option">
+       
+            <mat-radio-button value="None">None</mat-radio-button>
+          <mat-radio-button value="BUHead">BUHead</mat-radio-button>
+          <mat-radio-button value="HR">HR</mat-radio-button>
+          <mat-radio-button value="BUHead&HR">BUHead&HR</mat-radio-button>
+        </mat-radio-group>
+    
+
+<div class="text-center col-12">
+    <button [mat-dialog-close]="" mat-raised-button color="primary" (click)="add(data)" [disabled]="!addForm.form.valid" >Submit</button>
+</div>
+</div>

@@ -1,0 +1,15 @@
+.page-header{
+	background-color: #DBEAFE; 
+	border-radius: 5px; 
+	color:#000 ;
+	padding: 10px;
+	margin-top: 7px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-size: 22px;
+	
+}
+th{
+	font-size: 17px;
+}

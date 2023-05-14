@@ -1,0 +1,30 @@
+
+<mat-toolbar color="primary"  class="d-flex justify-content-between">
+    <div>View Journal Entry</div>
+    <mat-icon  [mat-dialog-close]="">close</mat-icon>
+</mat-toolbar>
+<div class="container">
+    <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea type="text" [(ngModel)]="stag.description" name="discription" matInput placeholder="Description" readonly></textarea>
+    </mat-form-field>
+    
+
+    <h2>Classification</h2>
+    <mat-radio-group [(ngModel)]="stag.classification" aria-label="Select an option" readonly>
+        <mat-radio-button value="Personal" >Personal</mat-radio-button>
+        <mat-radio-button value="Professional" >Professional</mat-radio-button>
+      </mat-radio-group>
+
+      <h2>Sharewith</h2>
+      <mat-radio-group [(ngModel)]="stag.sharedwith" aria-label="Select an option" readonly>
+          <mat-radio-button value="">None</mat-radio-button>
+          <mat-radio-button value="BUHead">BUHead</mat-radio-button>
+          <mat-radio-button value="HR">HR</mat-radio-button>
+          <mat-radio-button value="BUHead&HR">BUHead&HR</mat-radio-button>
+        </mat-radio-group>
+
+ <div class="text-center col-12">
+    <button [mat-dialog-close]="" mat-raised-button color="primary" (click)="(stag)">Back to List</button>
+</div> 
+</div>
